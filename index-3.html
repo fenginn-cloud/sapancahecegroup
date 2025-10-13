@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-lang-key="page_title">Sapanca Hece Group | Gayrimenkul, Yapı, Reklam & Turizm Çözümleri</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --primary: #0A2463;
+      --secondary: #FF9B00;
+      --text-dark: #2c3e50;
+      --text-light: #ecf0f1;
+      --bg-light: #f8f9fa;
+      --white: #fff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Roboto',sans-serif;
+      color:var(--text-dark);
+      background:var(--bg-light);
+      line-height:1.6;
+    }
+    a { text-decoration:none; }
+    ul { list-style:none; }
+
+    /* Header */
+    .header {
+      position:sticky; top:0; z-index:1000;
+      background:rgba(255,255,255,0.9); backdrop-filter:blur(10px);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 8%; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+    .logo {
+      font-family:'Montserrat',sans-serif;
+      font-size:26px; font-weight:700;
+      color:var(--primary);
+    }
+    .nav-container { display:flex; align-items:center; gap:40px; }
+    .nav-links { display:flex; }
+    .nav-links li { margin-left:30px; }
+    .nav-links a {
+      font-family:'Montserrat',sans-serif; font-weight:600; font-size:16px;
+      color:var(--text-dark); position:relative; transition:color .3s;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; width:0; height:2px; bottom:-5px; left:0;
+      background:var(--secondary); transition:width .3s;
+    }
+    .nav-links a:hover { color:var(--secondary); }
+    .nav-links a:hover::after { width:100%; }
+
+    .lang-switcher {
+      display:flex; align-items:center; gap:5px;
+      border-left:1px solid #ccc; padding-left:20px;
+    }
+    .lang-switcher a {
+      font-family:'Montserrat',sans-serif; font-weight:600; font-size:14px;
+      color:var(--text-dark); padding:5px; transition:color .3s;
+    }
+    .lang-switcher a.active { color:var(--secondary); }
+    .lang-switcher span { color:#ccc; }
+
+    /* Hero */
+    .hero {
+      height:90vh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; text-align:center;
+      color:var(--white);
+      background:
+        linear-gradient(rgba(10,36,99,0.7),rgba(10,36,99,0.5)),
+        url('https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=2070&auto=format&fit=crop')
+        no-repeat center/cover;
+      position:relative;
+    }
+    .hero h1 {
+      font-family:'Montserrat',sans-serif;
+      font-size:4.5rem; font-weight:700;
+      text-shadow:2px 2px 8px rgba(0,0,0,0.5);
+      animation:fadeInDown .8s ease-out;
+    }
+    .hero p {
+      font-size:1.5rem; font-weight:300; margin-top:15px;
+      max-width:600px; animation:fadeInUp .8s ease-out .3s;
+      animation-fill-mode:backwards;
+    }
+    .cta-button {
+      display:inline-block; margin-top:30px; padding:15px 30px;
+      background:var(--secondary); color:var(--white);
+      font-family:'Montserrat',sans-serif; font-weight:600;
+      border-radius:50px; box-shadow:0 4px 15px rgba(255,155,0,0.4);
+      transition:.3s; animation:fadeInUp .8s ease-out .6s;
+      animation-fill-mode:backwards;
+    }
+    .cta-button:hover {
+      transform:translateY(-5px);
+      box-shadow:0 6px 20px rgba(255,155,0,0.6);
+      background:#ffac33;
+    }
+
+    /* Section Titles */
+    .section { padding:80px 8%; }
+    .section-title {
+      position:relative; text-align:center;
+      font-family:'Montserrat',sans-serif; font-size:2.5rem;
+      color:var(--primary); margin-bottom:50px;
+    }
+    .section-title::after {
+      content:''; position:absolute;
+      width:80px; height:4px; bottom:-15px; left:50%;
+      transform:translateX(-50%);
+      background:var(--secondary); border-radius:2px;
+    }
+
+    /* Hizmet Kartları */
+    .cards {
+      display:flex; flex-wrap:wrap;
+      justify-content:center; gap:30px;
+    }
+    .card {
+      background:var(--white); width:320px;
+      border-radius:15px; padding:40px 30px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      display:flex; flex-direction:column;
+      transition:.3s; border-top:5px solid transparent;
+      animation:fadeInUp .8s ease-out;
+    }
+    .card:hover {
+      transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.12);
+      border-top-color:var(--secondary);
+    }
+    .card i {
+      font-size:48px; margin-bottom:20px; color:var(--secondary);
+    }
+    .card h3 {
+      font-family:'Montserrat',sans-serif; font-size:22px;
+      margin-bottom:15px; color:var(--primary);
+    }
+    .card p { font-size:16px; color:#555; flex-grow:1; }
+
+    /* Galeri Slider */
+    .slider-container {
+      position:relative; overflow:hidden;
+      max-width:1100px; margin:auto; border-radius:15px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+    .slider-track {
+      display:flex; width:200%; /* 2 slayt için */
+      transition:transform .5s ease-in-out;
+    }
+    .slide {
+      width:50%; position:relative;
+    }
+    .slide-image {
+      width:100%; height:500px; object-fit:cover;
+      display:block;
+    }
+    .slide-caption {
+      position:absolute; left:0; right:0; bottom:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+      padding:50px 30px 30px;
+      color:#fff;
+    }
+    .slide-caption h3 {
+      font-family:'Montserrat',sans-serif; font-size:24px;
+      margin-bottom:10px;
+    }
+    .slide-caption p { font-size:16px; }
+
+    .slider-button {
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:50px; height:50px; border:none; border-radius:50%;
+      background:rgba(255,255,255,0.8); color:var(--primary);
+      font-size:2rem; cursor:pointer; display:flex;
+      align-items:center; justify-content:center; z-index:10;
+      transition:.3s;
+    }
+    .slider-button:hover { background:var(--white); }
+    .slider-button.prev { left:15px; }
+    .slider-button.next { right:15px; }
+
+    /* Footer */
+    .footer {
+      background:var(--primary); color:var(--text-light);
+      display:flex; flex-wrap:wrap;
+      justify-content:space-between; align-items:flex-start;
+      gap:30px; padding:60px 8%;
+    }
+    .footer .box { flex:1 1 250px; min-width:250px; }
+    .footer .box h3 {
+      font-family:'Montserrat',sans-serif;
+      font-size:20px; color:var(--white);
+      margin-bottom:20px; padding-bottom:10px;
+      border-bottom:2px solid var(--secondary);
+      display:inline-block;
+    }
+    .footer ul li { margin-bottom:12px; }
+    .footer ul li a {
+      color:var(--text-light); transition:.3s;
+      display:inline-flex; align-items:center;
+    }
+    .footer ul li a i { margin-right:8px; }
+    .footer ul li a:hover {
+      color:var(--secondary); transform:translateX(5px);
+    }
+    .socials a {
+      margin-right:15px; color:var(--text-light);
+      font-size:24px; transition:.3s;
+    }
+    .socials a:hover {
+      color:var(--secondary); transform:translateY(-3px);
+    }
+
+    /* Harita */
+    .map-container {
+      width:100%; height:250px; overflow:hidden;
+      border-radius:10px;
+    }
+    .map-container iframe { width:100%; height:100%; border:0; }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      text-align:center; background:#081c4a;
+      padding:15px; font-size:14px; color:#aaa;
+    }
+
+    /* RTL Adjustments */
+    html[dir="rtl"] {
+      font-family:'Cairo',sans-serif;
+    }
+    html[dir="rtl"] .nav-links li { margin-left:0; margin-right:30px; }
+    html[dir="rtl"] .nav-links a::after { left:auto; right:0; }
+    html[dir="rtl"] .lang-switcher {
+      border-left:none; padding-left:0;
+      border-right:1px solid #ccc; padding-right:20px;
+    }
+    html[dir="rtl"] .footer ul li a i {
+      margin-right:0; margin-left:8px;
+    }
+    html[dir="rtl"] .footer ul li a:hover {
+      transform:translateX(-5px);
+    }
+    html[dir="rtl"] .socials a {
+      margin-right:0; margin-left:15px;
+    }
+    html[dir="rtl"] .slide-caption {
+      text-align:right;
+    }
+    html[dir="rtl"] .slider-button.prev { left:auto; right:15px; }
+    html[dir="rtl"] .slider-button.next { right:auto; left:15px; }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width:992px) {
+      .hero h1 { font-size:3.2rem; }
+      .hero p { font-size:1.2rem; }
+    }
+    @media (max-width:768px) {
+      .nav-container { display:none; }
+      .hero h1 { font-size:2.5rem; }
+      .section { padding:60px 5%; }
+      .slide-image { height:400px; }
+      .slide-caption h3 { font-size:20px; }
+      .footer { flex-direction:column; text-align:center; align-items:center; }
+      .footer .box { max-width:350px; width:100%; }
+      .footer .box h3::after {
+        width:50px; margin:10px auto; display:block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#" class="logo">Sapanca Hece Group</a>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#hizmetler" data-lang-key="nav_services">Hizmetlerimiz</a></li>
+        <li><a href="#galeri"    data-lang-key="nav_gallery">Galeri</a></li>
+        <li><a href="#iletisim"  data-lang-key="nav_contact">İletişim</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <a href="#" class="lang-link active" data-lang="tr">TR</a><span>|</span>
+        <a href="#" class="lang-link"       data-lang="en">EN</a><span>|</span>
+        <a href="#" class="lang-link"       data-lang="ar">AR</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <h1 data-lang-key="hero_title">Gayrimenkul & Yapı & Reklam & Turizm</h1>
+      <p data-lang-key="hero_subtitle">Sapanca’da güvenin ve kalitenin modern adresi</p>
+      <a href="#hizmetler" class="cta-button" data-lang-key="hero_button">Hizmetlerimizi Keşfedin</a>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="section">
+      <h2 class="section-title" data-lang-key="services_title">Hizmetlerimiz</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-home"></i>
+          <h3 data-lang-key="card1_title">Gayrimenkul</h3>
+          <p data-lang-key="card1_desc">Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetleri ile hayalinizdeki mülke kavuşun.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-tools"></i>
+          <h3 data-lang-key="card2_title">Yapı & Tadilat</h3>
+          <p data-lang-key="card2_desc">Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-bullhorn"></i>
+          <h3 data-lang-key="card3_title">Reklam & Baskı</h3>
+          <p data-lang-key="card3_desc">Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-car-side"></i>
+          <h3 data-lang-key="card4_title">Turizm & Araç Kiralama</h3>
+          <p data-lang-key="card4_desc">Sapanca'yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Güvenli havalimanı transferleri ve kişiye özel tur hizmetlerimizle seyahatinizi planlayalım.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERİ -->
+    <section id="galeri" class="section">
+      <h2 class="section-title" data-lang-key="gallery_title">Galeri</h2>
+      <div class="slider-container">
+        <div class="slider-track">
+          <div class="slide">
+            <img src="assets/images/slide1.jpg" alt="Slide 1" class="slide-image">
+            <div class="slide-caption">
+              <h3 data-lang-key="slide1_title">Modern Villa Projeleri</h3>
+              <p data-lang-key="slide1_desc">Sapanca'nın doğasıyla iç içe, lüks ve konforlu yaşam alanları.</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/images/slide2.jpg" alt="Slide 2" class="slide-image">
+            <div class="slide-caption">
+              <h3 data-lang-key="slide2_title">Özgün İç Mekan Tasarımları</h3>
+              <p data-lang-key="slide2_desc">Hayallerinizdeki evi, estetik ve fonksiyonel dokunuşlarla gerçeğe dönüştürüyoruz.</p>
+            </div>
+          </div>
+        </div>
+        <button class="slider-button prev">&#10094;</button>
+        <button class="slider-button next">&#10095;</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="iletisim" class="footer">
+    <div class="box">
+      <h3 data-lang-key="footer_contact_title">İletişim Bilgileri</h3>
+      <ul>
+        <li><a href="tel:+905445834161"><i class="fas fa-phone"></i> +90 544 583 41 61</a></li>
+        <li><a href="tel:+905334606154"><i class="fas fa-phone"></i> +90 533 460 61 54</a></li>
+        <li><a href="tel:+905536860704"><i class="fas fa-phone"></i> +90 553 686 07 04</a></li>
+        <li><a href="mailto:info@hecegroup.com.tr"><i class="fas fa-envelope"></i> info@hecegroup.com.tr</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3 data-lang-key="footer_address_title">Konumumuz</h3>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1516.228230910168!2d30.1996363156328!3d40.69180379491024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cca87ec7891b69%3A0x4030dc948c5526dc!2sSapanca%20Hece%20Real%20Estate!5e0!3m2!1str!2str!4v1672856424567!5m2!1str!2str" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <div class="box">
+      <h3 data-lang-key="footer_social_title">Bizi Takip Edin</h3>
+      <div class="socials">
+        <a href="#"            aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sapancarealty/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="#"            aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="#"            aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span data-lang-key="footer_copyright">&copy; 2025 Sapanca Hece Group. Tüm hakları saklıdır.</span>
+  </div>
+
+  <!-- SCRIPT: Dil & Slider -->
+  <script>
+    const translations = {
+      tr: {
+        page_title: "Sapanca Hece Group | Gayrimenkul, Yapı, Reklam & Turizm Çözümleri",
+        nav_services: "Hizmetlerimiz", nav_gallery: "Galeri", nav_contact: "İletişim",
+        hero_title: "Gayrimenkul & Yapı & Reklam & Turizm",
+        hero_subtitle: "Sapanca’da güvenin ve kalitenin modern adresi",
+        hero_button: "Hizmetlerimizi Keşfedin",
+        services_title: "Hizmetlerimiz",
+        card1_title: "Gayrimenkul", card1_desc: "Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetleri ile hayalinizdeki mülke kavuşun.",
+        card2_title: "Yapı & Tadilat", card2_desc: "Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.",
+        card3_title: "Reklam & Baskı", card3_desc: "Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.",
+        card4_title: "Turizm & Araç Kiralama", card4_desc: "Sapanca'yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Güvenli havalimanı transferleri ve kişiye özel tur hizmetlerimizle seyahatinizi planlayalım.",
+        gallery_title: "Galeri",
+        slide1_title: "Modern Villa Projeleri", slide1_desc: "Sapanca'nın doğasıyla iç içe, lüks ve konforlu yaşam alanları.",
+        slide2_title: "Özgün İç Mekan Tasarımları", slide2_desc: "Hayallerinizdeki evi, estetik ve fonksiyonel dokunuşlarla gerçeğe dönüştürüyoruz.",
+        footer_contact_title: "İletişim Bilgileri",
+        footer_address_title: "Konumumuz",
+        footer_social_title: "Bizi Takip Edin",
+        footer_copyright: "© 2025 Sapanca Hece Group. Tüm hakları saklıdır."
+      },
+      en: {
+        page_title: "Sapanca Hece Group | Real Estate, Construction, Advertising & Tourism Solutions",
+        nav_services: "Services", nav_gallery: "Gallery", nav_contact: "Contact",
+        hero_title: "Real Estate & Construction & Advertising & Tourism",
+        hero_subtitle: "The modern address of trust and quality in Sapanca",
+        hero_button: "Discover Our Services",
+        services_title: "Our Services",
+        card1_title: "Real Estate", card1_desc: "Reach your dream property with transparent and professional consultancy services in land, residence, and villa sales.",
+        card2_title: "Construction & Renovation", card2_desc: "We offer construction, renovation, exterior, and interior decoration solutions with a modern architectural approach.",
+        card3_title: "Advertising & Printing", card3_desc: "UV printing, signage, corporate identity, promotional products, and digital advertising solutions to highlight your brand.",
+        card4_title: "Tourism & Car Rental", card4_desc: "Freely explore Sapanca and its surroundings with our comfortable vehicles. Let us plan your trip with safe airport transfers and personalized tour services.",
+        gallery_title: "Gallery",
+        slide1_title: "Modern Villa Projects", slide1_desc: "Luxurious and comfortable living spaces integrated with the nature of Sapanca.",
+        slide2_title: "Unique Interior Designs", slide2_desc: "We turn your dream home into reality with aesthetic and functional touches.",
+        footer_contact_title: "Contact Information",
+        footer_address_title: "Our Location",
+        footer_social_title: "Follow Us",
+        footer_copyright: "© 2025 Sapanca Hece Group. All rights reserved."
+      },
+      ar: {
+        page_title: "مجموعة هيجه سبانجا | حلول العقارات والبناء والإعلان والسياحة",
+        nav_services: "خدماتنا", nav_gallery: "المعرض", nav_contact: "اتصل بنا",
+        hero_title: "العقارات والبناء والإعلان والسياحة",
+        hero_subtitle: "العنوان الحديث للثقة والجودة في سبانجا",
+        hero_button: "اكتشف خدماتنا",
+        services_title: "خدماتنا",
+        card1_title: "العقارات", card1_desc: "احصل على عقار أحلامك من خلال خدمات استشارية شفافة ومحترفة في مبيعات الأراضي والمساكن والفلل.",
+        card2_title: "البناء والتجديد", card2_desc: "نقدم حلول البناء والتجديد والواجهات الخارجية والديكور الداخلي بمفهوم معماري حديث.",
+        card3_title: "الإعلان والطباعة", card3_desc: "حلول الطباعة بالأشعة فوق البنفسجية واللافتات والهوية المؤسسية والمنتجات الترويجية والإعلانات الرقمية لإبراز علامتك التجارية.",
+        card4_title: "السياحة وتأجير السيارات", card4_desc: "استكشف سبانجا ومحيطها بحرية مع سياراتنا المريحة. دعنا نخطط لرحلتك مع انتقالات المطار الآمنة والخدمات السياحية المخصصة.",
+        gallery_title: "المعرض",
+        slide1_title: "مشاريع الفلل الحديثة", slide1_desc: "مساحات معيشة فاخرة ومريحة متكاملة مع طبيعة سبانجا.",
+        slide2_title: "تصاميم داخلية فريدة", slide2_desc: "نحول منزل أحلامك إلى حقيقة بلمسات جمالية وعملية.",
+        footer_contact_title: "معلومات الاتصال",
+        footer_address_title: "موقعنا",
+        footer_social_title: "تابعنا",
+        footer_copyright: "© 2025 مجموعة هيجه سبانجا. جميع الحقوق محفوظة."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-lang-key]').forEach(el => {
+        const key = el.getAttribute('data-lang-key');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.title = translations[lang].page_title;
+      document.documentElement.lang = lang;
+      document.documentElement.dir  = (lang==='ar'?'rtl':'ltr');
+      document.querySelectorAll('.lang-link').forEach(a=>{
+        a.classList.toggle('active', a.getAttribute('data-lang')===lang);
+      });
+      localStorage.setItem('language', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      // Dil değiştirici
+      document.querySelectorAll('.lang-link').forEach(a=>{
+        a.addEventListener('click', e=>{
+          e.preventDefault();
+          setLanguage(a.getAttribute('data-lang'));
+        });
+      });
+      setLanguage(localStorage.getItem('language')||'tr');
+
+      // Slider
+      const track = document.querySelector('.slider-track');
+      const slides = Array.from(track.children);
+      let index = 0;
+      document.querySelector('.slider-button.next').onclick = ()=>{
+        index = (index+1)%slides.length;
+        track.style.transform = `translateX(-${index*(100/slides.length)}%)`;
+      };
+      document.querySelector('.slider-button.prev').onclick = ()=>{
+        index = (index-1+slides.length)%slides.length;
+        track.style.transform = `translateX(-${index*(100/slides.length)}%)`;
+      };
+    });
+  </script>
+</body>
+</html>
+```
