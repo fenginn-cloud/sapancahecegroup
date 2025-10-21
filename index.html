@@ -4,7 +4,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sapanca Hece Group</title>
-  <meta name="description" content="Sapanca'da Gayrimenkul, Yapı & Tadilat, Reklam & Baskı, Turizm & Araç Kiralama." />
+
+  <!-- === Kanonik URL (alan adınızı doğrulayın) === -->
+  <link rel="canonical" href="https://sapancahecegroup.com/" />
+
+  <!-- === Basit hreflang (aynı sayfa, query-param ile çok dil) === -->
+  <link rel="alternate" href="https://sapancahecegroup.com/?lang=tr" hreflang="tr" />
+  <link rel="alternate" href="https://sapancahecegroup.com/?lang=en" hreflang="en" />
+  <link rel="alternate" href="https://sapancahecegroup.com/?lang=ar" hreflang="ar" />
+  <link rel="alternate" href="https://sapancahecegroup.com/" hreflang="x-default" />
+
+  <!-- === SEO Açıklama === -->
+  <meta name="description" content="Sapanca'da Gayrimenkul, Yapı & Tadilat, Reklam & Baskı, Turizm & Araç Kiralama. Güvenilir danışmanlık ve modern çözümler." />
+
+  <!-- === OpenGraph / Twitter === -->
+  <meta property="og:site_name" content="Sapanca Hece Group" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sapanca Hece Group — Gayrimenkul · Yapı · Reklam · Turizm" />
+  <meta property="og:description" content="Sapanca'da güvenin ve kalitenin modern adresi." />
+  <meta property="og:url" content="https://sapancahecegroup.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sapanca Hece Group" />
+  <meta name="twitter:description" content="Gayrimenkul, Yapı, Reklam, Turizm — Sapanca." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- === Küçük performans dokunuşları === -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://maps.googleapis.com" />
 
   <style>
     :root{
@@ -55,7 +84,6 @@
       background:rgba(255,255,255,.85);color:#111;border:none;width:40px;height:40px;border-radius:999px;cursor:pointer}
     .gallery .prev{left:12px} .gallery .next{right:12px}
 
-    /* İletişim */
     .contact-grid{display:grid;gap:20px;grid-template-columns:1.2fr .8fr}
     @media (max-width:920px){ .contact-grid{grid-template-columns:1fr} .map{height:320px} }
     form{display:grid;gap:12px}
@@ -67,12 +95,65 @@
     .ok{color:var(--ok)} .err{color:var(--err)}
     .contact-card{background:#fff;border:1px solid var(--ring);border-radius:16px;padding:20px}
 
-    /* WhatsApp FAB */
     .fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;
          width:56px;height:56px;border-radius:999px;display:grid;place-items:center;
          box-shadow:0 12px 24px rgba(0,0,0,.18);text-decoration:none;font-size:26px;z-index:50}
     .rtl{direction:rtl}
   </style>
+
+  <!-- === JSON-LD: Organization + LocalBusiness === -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sapanca Hece Group",
+    "url": "https://sapancahecegroup.com/",
+    "logo": "https://sapancahecegroup.com/logo.png",
+    "sameAs": [
+      "https://instagram.com/sapancarealty"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+90-544-583-4161",
+      "contactType": "customer service",
+      "areaServed": "TR"
+    },{
+      "@type": "ContactPoint",
+      "telephone": "+90-533-460-6154",
+      "contactType": "customer service",
+      "areaServed": "TR"
+    },{
+      "@type": "ContactPoint",
+      "telephone": "+90-553-686-0704",
+      "contactType": "customer service",
+      "areaServed": "TR",
+      "availableLanguage": ["tr","en","ar"]
+    }]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sapanca Hece Real Estate",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sapanca",
+      "addressRegion": "Sakarya",
+      "addressCountry": "TR"
+    },
+    "telephone": "+90-553-686-0704"
+  }
+  </script>
+
+  <!-- === Google Analytics 4 (ölçüm kimliğinizi ekleyin) === -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // <-- GA4 kimliğini buraya yazın
+  </script>
 </head>
 <body>
   <!-- ÜST MENÜ -->
@@ -148,7 +229,7 @@
       <p class="lead" style="text-align:center;margin-bottom:20px" data-i18n="gallery_sub">Seçili proje ve iş örneklerimizden kesitler.</p>
 
       <div class="gallery" id="slider">
-        <img id="slide-img" src="" alt="Galeri görseli" />
+        <img id="slide-img" src="" alt="Galeri görseli" loading="lazy" />
         <div class="cap">
           <div id="cap-title" style="font-weight:700">Başlık</div>
           <div id="cap-desc"  style="opacity:.9;font-size:14px">Açıklama</div>
@@ -162,7 +243,6 @@
   <!-- İLETİŞİM + HARİTA -->
   <section id="contact" class="section-frame">
     <div class="container contact-grid">
-      <!-- Form Kartı -->
       <div class="contact-card">
         <h3 style="margin:0 0 6px" data-i18n="contact_title">İletişim</h3>
         <p class="hint" data-i18n="contact_sub">Formu gönderin; size kısa sürede dönüş yapalım.</p>
@@ -190,6 +270,12 @@
             <input type="checkbox" required />
             <span data-i18n="kvkk">KVKK/Aydınlatma metnini okudum, onaylıyorum.</span>
           </label>
+
+          <!-- Formspree/Netlify için gizli alanlar (opsiyonel ama faydalı) -->
+          <input type="hidden" name="_subject"  value="Hece Group — Web İletişim Formu" />
+          <input type="hidden" name="_language" value="tr" />
+          <input type="text"   name="_gotcha"   style="display:none" tabindex="-1" autocomplete="off" />
+
           <button class="btn" type="submit" data-i18n="send">Gönder</button>
           <div id="formMsg" class="note" style="margin-top:8px"></div>
         </form>
@@ -198,14 +284,12 @@
         </p>
       </div>
 
-      <!-- Harita Kartı -->
       <div class="contact-card" style="padding:0;overflow:hidden">
         <iframe class="map" title="Harita" width="100%" height="100%" frameborder="0" style="border:0;min-height:420px"
-          src="https://www.google.com/maps?q=Sapanca%20Hece%20Real%20Estate&z=15&output=embed" allowfullscreen>
-        </iframe>
+          src="https://www.google.com/maps?q=Sapanca%20Hece%20Real%20Estate&z=15&output=embed"
+          loading="lazy" allowfullscreen></iframe>
         <div style="padding:12px;border-top:1px solid var(--ring);display:flex;justify-content:space-between;align-items:center">
           <span class="hint" data-i18n="addr">Kurtköy, Sapanca / Sakarya</span>
-          <!-- Sizin verdiğiniz kısa link -->
           <a class="btn" href="https://maps.app.goo.gl/qobTDmVPjX2s8gYSA" target="_blank" rel="noopener" data-i18n="open_map">
             Haritada Aç
           </a>
@@ -220,77 +304,50 @@
   <script>
     /* ===== DİL SÖZLÜĞÜ ===== */
     const i18n = {
-      tr: {
-        nav_services:"Hizmetlerimiz", nav_gallery:"Galeri", nav_contact:"İletişim",
-        hero_title:"Gayrimenkul · Yapı · Reklam · Turizm",
-        hero_sub:"Sapanca'da güvenin ve kalitenin modern adresi",
-        cta:"Hizmetlerimizi Keşfedin",
-        services_title:"Hizmetlerimiz",
-        s1_t:"Gayrimenkul",
-        s1_d:"Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetiyle hayalinizdeki mülke kavuşun.",
-        s2_t:"Yapı & Tadilat",
-        s2_d:"Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.",
-        s3_t:"Reklam & Baskı",
-        s3_d:"Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.",
-        s4_t:"Turizm & Araç Kiralama",
-        s4_d:"Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.",
+      tr: { nav_services:"Hizmetlerimiz", nav_gallery:"Galeri", nav_contact:"İletişim",
+        hero_title:"Gayrimenkul · Yapı · Reklam · Turizm", hero_sub:"Sapanca'da güvenin ve kalitenin modern adresi",
+        cta:"Hizmetlerimizi Keşfedin", services_title:"Hizmetlerimiz",
+        s1_t:"Gayrimenkul", s1_d:"Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetiyle hayalinizdeki mülke kavuşun.",
+        s2_t:"Yapı & Tadilat", s2_d:"Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.",
+        s3_t:"Reklam & Baskı", s3_d:"Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.",
+        s4_t:"Turizm & Araç Kiralama", s4_d:"Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.",
         gallery_title:"Galeri", gallery_sub:"Seçili proje ve iş örneklerimizden kesitler.",
         contact_title:"İletişim", contact_sub:"Formu gönderin; size kısa sürede dönüş yapalım.",
         kvkk:"KVKK/Aydınlatma metnini okudum, onaylıyorum.",
-        send:"Gönder",
-        form_note:"Not: Form gerçek gönderim için bir servisle (Formspree/Netlify) bağlanacaktır.",
-        addr:"Kurtköy, Sapanca / Sakarya",
-        open_map:"Haritada Aç"
+        send:"Gönder", form_note:"Not: Form gerçek gönderim için bir servisle (Formspree/Netlify) bağlanacaktır.",
+        addr:"Kurtköy, Sapanca / Sakarya", open_map:"Haritada Aç"
       },
-      en: {
-        nav_services:"Services", nav_gallery:"Gallery", nav_contact:"Contact",
-        hero_title:"Real Estate · Construction · Advertising · Tourism",
-        hero_sub:"The modern address of trust and quality in Sapanca",
-        cta:"Explore Our Services",
-        services_title:"Our Services",
-        s1_t:"Real Estate",
-        s1_d:"Transparent, professional consulting for land, apartments and villas to reach your dream property.",
-        s2_t:"Construction & Renovation",
-        s2_d:"Modern architecture, renovation, exterior and interior solutions.",
-        s3_t:"Advertising & Printing",
-        s3_d:"UV printing, signage, corporate identity, promotional items and digital advertising solutions.",
-        s4_t:"Tourism & Car Rental",
-        s4_d:"Discover Sapanca with comfortable cars. Airport transfers and private tours.",
+      en: { nav_services:"Services", nav_gallery:"Gallery", nav_contact:"Contact",
+        hero_title:"Real Estate · Construction · Advertising · Tourism", hero_sub:"The modern address of trust and quality in Sapanca",
+        cta:"Explore Our Services", services_title:"Our Services",
+        s1_t:"Real Estate", s1_d:"Transparent, professional consulting for land, apartments and villas to reach your dream property.",
+        s2_t:"Construction & Renovation", s2_d:"Modern architecture, renovation, exterior and interior solutions.",
+        s3_t:"Advertising & Printing", s3_d:"UV printing, signage, corporate identity, promotional items and digital advertising solutions.",
+        s4_t:"Tourism & Car Rental", s4_d:"Discover Sapanca with comfortable cars. Airport transfers and private tours.",
         gallery_title:"Gallery", gallery_sub:"Selected highlights from our projects.",
         contact_title:"Contact", contact_sub:"Send the form and we'll get back to you shortly.",
         kvkk:"I have read and accept the privacy notice.",
-        send:"Send",
-        form_note:"Note: The form will be wired to a service (Formspree/Netlify) for real submission.",
-        addr:"Kurtköy, Sapanca / Sakarya",
-        open_map:"Open in Maps"
+        send:"Send", form_note:"Note: The form will be wired to a service (Formspree/Netlify) for real submission.",
+        addr:"Kurtköy, Sapanca / Sakarya", open_map:"Open in Maps"
       },
-      ar: {
-        nav_services:"خدماتنا", nav_gallery:"المعرض", nav_contact:"تواصل",
-        hero_title:"العقارات · الإنشاء · الإعلان · السياحة",
-        hero_sub:"العنوان الحديث للثقة والجودة في صابانجا",
-        cta:"استكشف خدماتنا",
-        services_title:"خدماتنا",
-        s1_t:"العقارات",
-        s1_d:"استشارات شفافة ومهنية لشراء الأراضي والمنازل والفلل للوصول إلى العقار الذي تحلم به.",
-        s2_t:"الإنشاء والتجديد",
-        s2_d:"عمارة حديثة وتجديدات وحلول داخلية وخارجية.",
-        s3_t:"الإعلان والطباعة",
-        s3_d:"طباعة UV ولوحات وهوية بصرية ومنتجات ترويجية وإعلانات رقمية.",
-        s4_t:"السياحة وتأجير السيارات",
-        s4_d:"اكتشف صابانجا بسيارات مريحة. تحويلات المطار وجولات خاصة.",
+      ar: { nav_services:"خدماتنا", nav_gallery:"المعرض", nav_contact:"تواصل",
+        hero_title:"العقارات · الإنشاء · الإعلان · السياحة", hero_sub:"العنوان الحديث للثقة والجودة في صابانجا",
+        cta:"استكشف خدماتنا", services_title:"خدماتنا",
+        s1_t:"العقارات", s1_d:"استشارات شفافة ومهنية لشراء الأراضي والمنازل والفلل للوصول إلى العقار الذي تحلم به.",
+        s2_t:"الإنشاء والتجديد", s2_d:"عمارة حديثة وتجديدات وحلول داخلية وخارجية.",
+        s3_t:"الإعلان والطباعة", s3_d:"طباعة UV ولوحات وهوية بصرية ومنتجات ترويجية وإعلانات رقمية.",
+        s4_t:"السياحة وتأجير السيارات", s4_d:"اكتشف صابانجا بسيارات مريحة. تحويلات المطار وجولات خاصة.",
         gallery_title:"المعرض", gallery_sub:"لمحات مختارة من مشاريعنا.",
         contact_title:"تواصل", contact_sub:"أرسل النموذج وسنعاود الاتصال بك قريبًا.",
         kvkk:"لقد قرأت إشعار الخصوصية وأوافق عليه.",
-        send:"إرسال",
-        form_note:"ملاحظة: سيتم ربط النموذج بخدمة (Formspree/Netlify) للإرسال الفعلي.",
-        addr:"كورتكوي، صابانجا / ساكاريا",
-        open_map:"افتح في الخرائط"
+        send:"إرسال", form_note:"ملاحظة: سيتم ربط النموذج بخدمة (Formspree/Netlify) للإرسال الفعلي.",
+        addr:"كورتكوي، صابانجا / ساكاريا", open_map:"افتح في الخرائط"
       }
     };
 
-    // Dil + RTL
+    // Dil + URL param (hreflang için basit yaklaşım)
     const langBtns=document.querySelectorAll('.tag[data-lang]');
-    function setLang(l){
+    function setLang(l, push=false){
       const dict=i18n[l]||i18n.tr;
       document.documentElement.lang=l;
       document.body.classList.toggle('rtl', l==='ar');
@@ -299,30 +356,29 @@
         if(dict[k]) el.textContent=dict[k];
       });
       langBtns.forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+      if(push){
+        const url=new URL(window.location.href);
+        url.searchParams.set('lang', l);
+        history.replaceState({}, '', url);
+      }
       renderSlide();
     }
-    langBtns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+    langBtns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang, true)));
 
     // Galeri içeriği
     const slides = [
-      {
-        src:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
+      { src:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
         t:{tr:["Modern Villa Projeleri","Doğayla iç içe, lüks ve konforlu yaşam alanları."],
            en:["Modern Villa Projects","Luxurious, nature-integrated living spaces."],
-           ar:["فلل حديثة","مساحات معيشية فاخرة منسجمة مع الطبيعة."]}
-      },
-      {
-        src:"https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop",
+           ar:["فلل حديثة","مساحات معيشية فاخرة منسجمة مع الطبيعة."]} },
+      { src:"https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop",
         t:{tr:["Kurumsal Kimlik & Tabela","Markanızı öne çıkaran güçlü uygulamalar."],
            en:["Branding & Signage","Strong executions that make your brand stand out."],
-           ar:["الهوية البصرية واللوحات","تنفيذات قوية تُبرز علامتك."]}
-      },
-      {
-        src:"https://images.unsplash.com/photo-1517940310602-75f39d4adcc3?q=80&w=1600&auto=format&fit=crop",
+           ar:["الهوية البصرية واللوحات","تنفيذات قوية تُبرز علامتك."]} },
+      { src:"https://images.unsplash.com/photo-1517940310602-75f39d4adcc3?q=80&w=1600&auto=format&fit=crop",
         t:{tr:["Transfer & Araç Kiralama","Havalimanı karşılama ve özel turlar."],
            en:["Transfers & Car Rental","Airport meet-and-greet and private tours."],
-           ar:["النقل وتأجير السيارات","استقبال في المطار وجولات خاصة."]}
-      }
+           ar:["النقل وتأجير السيارات","استقبال في المطار وجولات خاصة."]} }
     ];
     const imgEl=document.getElementById('slide-img');
     const capTitle=document.getElementById('cap-title');
@@ -338,22 +394,19 @@
     document.querySelector('#slider .next').addEventListener('click',()=>{ idx=(idx+1)%slides.length; renderSlide(); });
     document.querySelector('#slider .prev').addEventListener('click',()=>{ idx=(idx-1+slides.length)%slides.length; renderSlide(); });
 
-    // ====== FORM GÖNDERİMİ ======
-    // Formspree veya Netlify Forms endpoint'inizi buraya ekleyin:
-    const FORM_ENDPOINT = "https://formspree.io/f/mnngygyy";
+    // ====== FORM GÖNDERİMİ (Formspree AJAX) ======
+    const FORM_ENDPOINT = "https://formspree.io/f/mnngygyy";  // sizin endpoint’iniz
     const form=document.getElementById('contactForm');
     const msg=document.getElementById('formMsg');
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
       const data=Object.fromEntries(new FormData(form).entries());
       try{
-        if(!FORM_ENDPOINT){
-          msg.className="note ok";
-          msg.textContent="Teşekkürler! Mesajınız alındı.;
-          form.reset();
-          return;
-        }
-        const res=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+        const res=await fetch(FORM_ENDPOINT,{
+          method:"POST",
+          headers:{"Content-Type":"application/json","Accept":"application/json"},
+          body:JSON.stringify(data)
+        });
         if(res.ok){
           msg.className="note ok";
           msg.textContent="Teşekkürler! Mesajınız başarıyla gönderildi.";
@@ -367,8 +420,9 @@
       }
     });
 
-    // Başlangıç
-    setLang('tr');
+    // Başlangıç dili: URL param’a bak
+    const urlLang=new URL(window.location.href).searchParams.get('lang');
+    setLang(urlLang || 'tr', false);
     renderSlide();
   </script>
 </body>
