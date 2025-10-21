@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sapanca Hece Group</title>
 
-  <!-- === Kanonik URL (alan adınızı doğrulayın) === -->
+  <!-- Canonical & hreflang -->
   <link rel="canonical" href="https://sapancahecegroup.com/" />
-
-  <!-- === Basit hreflang (aynı sayfa, query-param ile çok dil) === -->
   <link rel="alternate" href="https://sapancahecegroup.com/?lang=tr" hreflang="tr" />
   <link rel="alternate" href="https://sapancahecegroup.com/?lang=en" hreflang="en" />
   <link rel="alternate" href="https://sapancahecegroup.com/?lang=ar" hreflang="ar" />
   <link rel="alternate" href="https://sapancahecegroup.com/" hreflang="x-default" />
 
-  <!-- === SEO Açıklama === -->
+  <!-- SEO -->
   <meta name="description" content="Sapanca'da Gayrimenkul, Yapı & Tadilat, Reklam & Baskı, Turizm & Araç Kiralama. Güvenilir danışmanlık ve modern çözümler." />
 
-  <!-- === OpenGraph / Twitter === -->
+  <!-- OpenGraph / Twitter -->
   <meta property="og:site_name" content="Sapanca Hece Group" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sapanca Hece Group — Gayrimenkul · Yapı · Reklam · Turizm" />
@@ -30,10 +28,21 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1200&auto=format&fit=crop" />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- === Küçük performans dokunuşları === -->
+  <!-- App icons / Manifest -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-180.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <!-- Preconnect / Preload -->
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="preconnect" href="https://www.google.com" />
   <link rel="preconnect" href="https://maps.googleapis.com" />
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1920&auto=format&fit=crop"
+        imagesrcset="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=768&auto=format&fit=crop 768w,
+                     https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1280&auto=format&fit=crop 1280w,
+                     https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1920&auto=format&fit=crop 1920w">
 
   <style>
     :root{
@@ -101,7 +110,7 @@
     .rtl{direction:rtl}
   </style>
 
-  <!-- === JSON-LD: Organization + LocalBusiness === -->
+  <!-- JSON-LD (Organization + LocalBusiness) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -109,50 +118,29 @@
     "name": "Sapanca Hece Group",
     "url": "https://sapancahecegroup.com/",
     "logo": "https://sapancahecegroup.com/logo.png",
-    "sameAs": [
-      "https://instagram.com/sapancarealty"
-    ],
+    "sameAs": ["https://instagram.com/sapancarealty"],
     "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+90-544-583-4161",
-      "contactType": "customer service",
-      "areaServed": "TR"
+      "@type": "ContactPoint","telephone": "+90-544-583-4161","contactType": "customer service","areaServed":"TR"
     },{
-      "@type": "ContactPoint",
-      "telephone": "+90-533-460-6154",
-      "contactType": "customer service",
-      "areaServed": "TR"
+      "@type": "ContactPoint","telephone": "+90-533-460-6154","contactType": "customer service","areaServed":"TR"
     },{
-      "@type": "ContactPoint",
-      "telephone": "+90-553-686-0704",
-      "contactType": "customer service",
-      "areaServed": "TR",
-      "availableLanguage": ["tr","en","ar"]
+      "@type": "ContactPoint","telephone": "+90-553-686-0704","contactType": "customer service","areaServed":"TR","availableLanguage":["tr","en","ar"]
     }]
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Sapanca Hece Real Estate",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sapanca",
-      "addressRegion": "Sakarya",
-      "addressCountry": "TR"
-    },
-    "telephone": "+90-553-686-0704"
-  }
+  { "@context":"https://schema.org","@type":"LocalBusiness","name":"Sapanca Hece Real Estate",
+    "address":{"@type":"PostalAddress","addressLocality":"Sapanca","addressRegion":"Sakarya","addressCountry":"TR"},
+    "telephone":"+90-553-686-0704" }
   </script>
 
-  <!-- === Google Analytics 4 (ölçüm kimliğinizi ekleyin) === -->
+  <!-- GA4 (ölçüm kimliğinizi yazın) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // <-- GA4 kimliğini buraya yazın
+    gtag('config', 'G-XXXXXXX'); // <-- GA4 kimliğini ekleyin
   </script>
 </head>
 <body>
@@ -160,15 +148,15 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo"></div>
+        <div class="logo" aria-hidden="true"></div>
         <strong>Sapanca Hece Group</strong>
       </div>
-      <nav class="links">
+      <nav class="links" aria-label="Ana menü">
         <a href="#services" data-i18n="nav_services">Hizmetlerimiz</a>
         <a href="#gallery"  data-i18n="nav_gallery">Galeri</a>
         <a href="#contact"  data-i18n="nav_contact">İletişim</a>
       </nav>
-      <div class="lang">
+      <div class="lang" role="group" aria-label="Dil seçimi">
         <button class="tag active" data-lang="tr">TR</button>
         <button class="tag" data-lang="en">EN</button>
         <button class="tag" data-lang="ar">AR</button>
@@ -189,35 +177,11 @@
   <section id="services" class="section-frame">
     <div class="container">
       <h2 style="text-align:center;font-size:clamp(24px,3vw,36px);margin-bottom:32px;" data-i18n="services_title">Hizmetlerimiz</h2>
-
       <div class="cards">
-        <div class="card">
-          <h3 data-i18n="s1_t">Gayrimenkul</h3>
-          <p data-i18n="s1_d">
-            Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetiyle hayalinizdeki mülke kavuşun.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="s2_t">Yapı &amp; Tadilat</h3>
-          <p data-i18n="s2_d">
-            Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="s3_t">Reklam &amp; Baskı</h3>
-          <p data-i18n="s3_d">
-            Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="s4_t">Turizm &amp; Araç Kiralama</h3>
-          <p data-i18n="s4_d">
-            Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.
-          </p>
-        </div>
+        <div class="card"><h3 data-i18n="s1_t">Gayrimenkul</h3><p data-i18n="s1_d">Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetiyle hayalinizdeki mülke kavuşun.</p></div>
+        <div class="card"><h3 data-i18n="s2_t">Yapı &amp; Tadilat</h3><p data-i18n="s2_d">Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.</p></div>
+        <div class="card"><h3 data-i18n="s3_t">Reklam &amp; Baskı</h3><p data-i18n="s3_d">Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.</p></div>
+        <div class="card"><h3 data-i18n="s4_t">Turizm &amp; Araç Kiralama</h3><p data-i18n="s4_d">Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.</p></div>
       </div>
     </div>
   </section>
@@ -227,9 +191,8 @@
     <div class="container">
       <h2 style="text-align:center;font-size:clamp(24px,3vw,36px);margin-bottom:12px;" data-i18n="gallery_title">Galeri</h2>
       <p class="lead" style="text-align:center;margin-bottom:20px" data-i18n="gallery_sub">Seçili proje ve iş örneklerimizden kesitler.</p>
-
       <div class="gallery" id="slider">
-        <img id="slide-img" src="" alt="Galeri görseli" loading="lazy" />
+        <img id="slide-img" src="" alt="Galeri görseli" loading="lazy" decoding="async" />
         <div class="cap">
           <div id="cap-title" style="font-weight:700">Başlık</div>
           <div id="cap-desc"  style="opacity:.9;font-size:14px">Açıklama</div>
@@ -253,7 +216,7 @@
           <a href="tel:+905334606154">+90 533 460 61 54</a> ·
           <a href="tel:+905536860704">+90 553 686 07 04</a>
           &nbsp;|&nbsp; <strong>E-posta:</strong> <a href="mailto:info@hecegroup.com.tr">info@hecegroup.com.tr</a>
-          &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://instagram.com/sapancarealty" target="_blank">@sapancarealty</a>
+          &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://instagram.com/sapancarealty" target="_blank" rel="noopener">@sapancarealty</a>
         </div>
 
         <form id="contactForm" autocomplete="on">
@@ -271,7 +234,7 @@
             <span data-i18n="kvkk">KVKK/Aydınlatma metnini okudum, onaylıyorum.</span>
           </label>
 
-          <!-- Formspree/Netlify için gizli alanlar (opsiyonel ama faydalı) -->
+          <!-- Formspree/Netlify için gizli alanlar -->
           <input type="hidden" name="_subject"  value="Hece Group — Web İletişim Formu" />
           <input type="hidden" name="_language" value="tr" />
           <input type="text"   name="_gotcha"   style="display:none" tabindex="-1" autocomplete="off" />
@@ -298,11 +261,11 @@
     </div>
   </section>
 
-  <!-- WhatsApp Hızlı Buton -->
-  <a class="fab" href="https://wa.me/905536860704" target="_blank" aria-label="WhatsApp">✆</a>
+  <!-- WhatsApp Hızlı Buton (GA4 click event) -->
+  <a id="waFab" class="fab" href="https://wa.me/905536860704" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
 
   <script>
-    /* ===== DİL SÖZLÜĞÜ ===== */
+    /* Dil sözlüğü (TR/EN/AR) — değişmedi */
     const i18n = {
       tr: { nav_services:"Hizmetlerimiz", nav_gallery:"Galeri", nav_contact:"İletişim",
         hero_title:"Gayrimenkul · Yapı · Reklam · Turizm", hero_sub:"Sapanca'da güvenin ve kalitenin modern adresi",
@@ -394,8 +357,8 @@
     document.querySelector('#slider .next').addEventListener('click',()=>{ idx=(idx+1)%slides.length; renderSlide(); });
     document.querySelector('#slider .prev').addEventListener('click',()=>{ idx=(idx-1+slides.length)%slides.length; renderSlide(); });
 
-    // ====== FORM GÖNDERİMİ (Formspree AJAX) ======
-    const FORM_ENDPOINT = "https://formspree.io/f/mnngygyy";  // sizin endpoint’iniz
+    // Form: Formspree AJAX
+    const FORM_ENDPOINT="https://formspree.io/f/mnngygyy";
     const form=document.getElementById('contactForm');
     const msg=document.getElementById('formMsg');
     form.addEventListener('submit', async (e)=>{
@@ -403,24 +366,20 @@
       const data=Object.fromEntries(new FormData(form).entries());
       try{
         const res=await fetch(FORM_ENDPOINT,{
-          method:"POST",
-          headers:{"Content-Type":"application/json","Accept":"application/json"},
+          method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
           body:JSON.stringify(data)
         });
-        if(res.ok){
-          msg.className="note ok";
-          msg.textContent="Teşekkürler! Mesajınız başarıyla gönderildi.";
-          form.reset();
-        }else{
-          throw new Error("İletim hatası");
-        }
-      }catch(err){
-        msg.className="note err";
-        msg.textContent="Üzgünüz, bir sorun oluştu. Lütfen daha sonra tekrar deneyin veya telefon/WhatsApp ile ulaşın.";
-      }
+        if(res.ok){ msg.className="note ok"; msg.textContent="Teşekkürler! Mesajınız başarıyla gönderildi."; form.reset(); }
+        else{ throw new Error("İletim hatası"); }
+      }catch(err){ msg.className="note err"; msg.textContent="Üzgünüz, bir sorun oluştu. Lütfen daha sonra tekrar deneyin veya telefon/WhatsApp ile ulaşın."; }
     });
 
-    // Başlangıç dili: URL param’a bak
+    // WhatsApp FAB tıklama takibi (GA4)
+    document.getElementById('waFab').addEventListener('click', ()=>{
+      if(typeof gtag==="function"){ gtag('event','click_whatsapp',{location:'fab','phone':'905536860704'}); }
+    });
+
+    // Başlangıç dili
     const urlLang=new URL(window.location.href).searchParams.get('lang');
     setLang(urlLang || 'tr', false);
     renderSlide();
