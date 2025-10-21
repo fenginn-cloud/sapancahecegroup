@@ -50,6 +50,15 @@
     @media (max-width:1000px){ .cards{grid-template-columns:repeat(2,1fr)} }
     @media (max-width:640px){ .cards{grid-template-columns:1fr} }
 
+    /* Galeri (slider) */
+    .gallery{position:relative;border:1px solid var(--ring);border-radius:16px;overflow:hidden;background:#000}
+    .gallery img{width:100%;height:420px;object-fit:cover}
+    .gallery .cap{position:absolute;left:0;right:0;bottom:0;color:#fff;
+      background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%);padding:16px}
+    .gallery .ctrl{position:absolute;top:50%;transform:translateY(-50%);
+      background:rgba(255,255,255,.85);color:#111;border:none;width:40px;height:40px;border-radius:999px;cursor:pointer}
+    .gallery .prev{left:12px} .gallery .next{right:12px}
+
     .rtl{direction:rtl}
   </style>
 </head>
@@ -63,6 +72,7 @@
       </div>
       <nav class="links">
         <a href="#services" data-i18n="nav_services">Hizmetlerimiz</a>
+        <a href="#gallery"  data-i18n="nav_gallery">Galeri</a>
         <a href="#contact"  data-i18n="nav_contact">İletişim</a>
       </nav>
       <div class="lang">
@@ -119,7 +129,25 @@
     </div>
   </section>
 
-  <!-- Şimdilik yer tutucu iletişim bölümü (sonraki adımlarda dolduracağız) -->
+  <!-- GALERİ (Slider) -->
+  <section id="gallery" class="section-frame" style="background:#fff">
+    <div class="container">
+      <h2 style="text-align:center;font-size:clamp(24px,3vw,36px);margin-bottom:12px;" data-i18n="gallery_title">Galeri</h2>
+      <p class="lead" style="text-align:center;margin-bottom:20px" data-i18n="gallery_sub">Seçili proje ve iş örneklerimizden kesitler.</p>
+
+      <div class="gallery" id="slider">
+        <img id="slide-img" src="" alt="Galeri görseli" />
+        <div class="cap">
+          <div id="cap-title" style="font-weight:700">Başlık</div>
+          <div id="cap-desc"  style="opacity:.9;font-size:14px">Açıklama</div>
+        </div>
+        <button class="ctrl prev" aria-label="Önceki">&#10094;</button>
+        <button class="ctrl next" aria-label="Sonraki">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM (placeholder; bir sonraki adımda dolduracağız) -->
   <section id="contact" class="container" style="padding:40px 0">
     <p style="color:var(--muted)" data-i18n="contact_placeholder">
       İletişim formu ve harita bir sonraki adımda eklenecek.
@@ -127,13 +155,10 @@
   </section>
 
   <script>
-    /* ====== METİNLERİ BURADAN DEĞİŞTİR (TR/EN/AR) ======
-       - Hero, Menü ve Hizmetler metinleri
-       - Sadece aşağıdaki sözlükleri düzenlemeniz yeterli
-    */
+    /* ====== METİNLERİ BURADAN DEĞİŞTİR (TR/EN/AR) ====== */
     const i18n = {
       tr: {
-        nav_services:"Hizmetlerimiz", nav_contact:"İletişim",
+        nav_services:"Hizmetlerimiz", nav_gallery:"Galeri", nav_contact:"İletişim",
         hero_title:"Gayrimenkul · Yapı · Reklam · Turizm",
         hero_sub:"Sapanca'da güvenin ve kalitenin modern adresi",
         cta:"Hizmetlerimizi Keşfedin",
@@ -146,10 +171,11 @@
         s3_d:"Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.",
         s4_t:"Turizm & Araç Kiralama",
         s4_d:"Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.",
+        gallery_title:"Galeri", gallery_sub:"Seçili proje ve iş örneklerimizden kesitler.",
         contact_placeholder:"İletişim formu ve harita bir sonraki adımda eklenecek."
       },
       en: {
-        nav_services:"Services", nav_contact:"Contact",
+        nav_services:"Services", nav_gallery:"Gallery", nav_contact:"Contact",
         hero_title:"Real Estate · Construction · Advertising · Tourism",
         hero_sub:"The modern address of trust and quality in Sapanca",
         cta:"Explore Our Services",
@@ -162,10 +188,11 @@
         s3_d:"UV printing, signage, corporate identity, promotional items and digital advertising solutions.",
         s4_t:"Tourism & Car Rental",
         s4_d:"Discover Sapanca with comfortable cars. Airport transfers and private tours.",
+        gallery_title:"Gallery", gallery_sub:"Selected highlights from our projects.",
         contact_placeholder:"Contact form and map will be added in the next step."
       },
       ar: {
-        nav_services:"خدماتنا", nav_contact:"تواصل",
+        nav_services:"خدماتنا", nav_gallery:"المعرض", nav_contact:"تواصل",
         hero_title:"العقارات · الإنشاء · الإعلان · السياحة",
         hero_sub:"العنوان الحديث للثقة والجودة في صابانجا",
         cta:"استكشف خدماتنا",
@@ -173,11 +200,12 @@
         s1_t:"العقارات",
         s1_d:"استشارات شفافة ومهنية لشراء الأراضي والمنازل والفلل للوصول إلى العقار الذي تحلم به.",
         s2_t:"الإنشاء والتجديد",
-        s2_d:"عمارة حديثة وأعمال تجديد وحلول للتشطيبات الداخلية والخارجية.",
+        s2_d:"عمارة حديثة وتجديدات وحلول داخلية وخارجية.",
         s3_t:"الإعلان والطباعة",
-        s3_d:"طباعة UV ولوحات وهوية بصرية ومنتجات ترويجية وحلول إعلان رقمية.",
+        s3_d:"طباعة UV ولوحات وهوية بصرية ومنتجات ترويجية وإعلانات رقمية.",
         s4_t:"السياحة وتأجير السيارات",
-        s4_d:"اكتشف صابانجا بسيارات مريحة. تحويلات المطار والجولات الخاصة.",
+        s4_d:"اكتشف صابانجا بسيارات مريحة. تحويلات المطار وجولات خاصة.",
+        gallery_title:"المعرض", gallery_sub:"لمحات مختارة من مشاريعنا.",
         contact_placeholder:"سيُضاف نموذج التواصل والخريطة في الخطوة التالية."
       }
     };
@@ -193,9 +221,50 @@
         if(dict[k]) el.textContent=dict[k];
       });
       langBtns.forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+      renderSlide(); // dil değişince altyazıları da güncelle
     }
     langBtns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+    /* ====== GALERİ İÇERİĞİ: Görsel ve metinleri buradan değiştir ====== */
+    const slides = [
+      {
+        src:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
+        t:{tr:["Modern Villa Projeleri","Doğayla iç içe, lüks ve konforlu yaşam alanları."],
+           en:["Modern Villa Projects","Luxurious, nature-integrated living spaces."],
+           ar:["فلل حديثة","مساحات معيشية فاخرة منسجمة مع الطبيعة."]}
+      },
+      {
+        src:"https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop",
+        t:{tr:["Kurumsal Kimlik & Tabela","Markanızı öne çıkaran güçlü uygulamalar."],
+           en:["Branding & Signage","Strong executions that make your brand stand out."],
+           ar:["الهوية البصرية واللوحات","تنفيذات قوية تُبرز علامتك."]}
+      },
+      {
+        src:"https://images.unsplash.com/photo-1517940310602-75f39d4adcc3?q=80&w=1600&auto=format&fit=crop",
+        t:{tr:["Transfer & Araç Kiralama","Havalimanı karşılama ve özel turlar."],
+           en:["Transfers & Car Rental","Airport meet-and-greet and private tours."],
+           ar:["النقل وتأجير السيارات","استقبال في المطار وجولات خاصة."]}
+      }
+    ];
+
+    // Basit slider
+    const imgEl = document.getElementById('slide-img');
+    const capTitle = document.getElementById('cap-title');
+    const capDesc  = document.getElementById('cap-desc');
+    let idx=0;
+    function renderSlide(){
+      const l=document.documentElement.lang||'tr';
+      const s=slides[idx];
+      imgEl.src=s.src;
+      const [t1,t2]=(s.t[l]||s.t.tr);
+      capTitle.textContent=t1; capDesc.textContent=t2;
+    }
+    document.querySelector('#slider .next').addEventListener('click',()=>{ idx=(idx+1)%slides.length; renderSlide(); });
+    document.querySelector('#slider .prev').addEventListener('click',()=>{ idx=(idx-1+slides.length)%slides.length; renderSlide(); });
+
+    // Başlangıç dili ve ilk görsel
     setLang('tr');
+    renderSlide();
   </script>
 </body>
 </html>
