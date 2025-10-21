@@ -7,7 +7,7 @@
   <meta name="description" content="Sapanca'da Gayrimenkul, Yapı & Tadilat, Reklam & Baskı, Turizm & Araç Kiralama." />
 
   <style>
-    /* Basit ve hafif stiller: sadece iskelet için */
+    /* Hafif, mobil-öncelikli stiller */
     :root{
       --ink:#0f172a; --muted:#475569; --ring:#e2e8f0;
       --brand:#1e40af; --accent:#f59e0b; --bg:#f8fafc; --card:#fff;
@@ -16,8 +16,9 @@
     body{margin:0;background:var(--bg);color:var(--ink);
          font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     .container{max-width:1100px;margin:auto;padding:0 16px}
+
     header{position:sticky;top:0;background:#ffffffcc;backdrop-filter:blur(8px);
-           border-bottom:1px solid var(--ring)}
+           border-bottom:1px solid var(--ring);z-index:20}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px}
     .logo{width:28px;height:28px;border-radius:8px;background:var(--brand)}
@@ -25,6 +26,8 @@
     .lang{display:flex;gap:8px}
     .tag{border:1px solid var(--ring);padding:6px 10px;border-radius:999px;cursor:pointer;background:#fff}
     .tag.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+    @media (max-width:640px){ .links{display:none} }
+
     .hero{position:relative;color:#fff}
     .hero::before{content:"";position:absolute;inset:0;
       background:url('https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;z-index:-2}
@@ -34,8 +37,20 @@
     p.lead{opacity:.95;margin:0}
     .btn{display:inline-block;background:var(--accent);color:#111;padding:10px 16px;
          border-radius:12px;font-weight:600;margin-top:16px;text-decoration:none}
+
+    /* Bölüm çerçeveleri */
+    section{scroll-margin-top:72px}
+    .section-frame{background:#fff;padding:56px 0;border-top:1px solid var(--ring);border-bottom:1px solid var(--ring)}
+
+    /* Hizmet kartları */
+    .cards{display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
+    .card{background:#f8fafc;padding:24px;border-radius:16px;border:1px solid var(--ring)}
+    .card h3{margin:0 0 6px}
+    .card p{color:var(--muted);font-size:15px;margin:0}
+    @media (max-width:1000px){ .cards{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .cards{grid-template-columns:1fr} }
+
     .rtl{direction:rtl}
-    @media (max-width:640px){ .links{display:none} }
   </style>
 </head>
 <body>
@@ -58,7 +73,7 @@
     </div>
   </header>
 
-  <!-- HERO (sadece başlık ve alt metin) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container inner">
       <h1 data-i18n="hero_title">Gayrimenkul · Yapı · Reklam · Turizm</h1>
@@ -67,31 +82,103 @@
     </div>
   </section>
 
-  <!-- Gelecekte diğer bölümler buraya eklenecek -->
-  <main class="container" style="padding:40px 0">
-    <p style="color:var(--muted)">Not: Bu sadece iskelet. Bir sonraki adımda “Hizmetler” bölümünü ekleyeceğiz.</p>
-  </main>
+  <!-- HİZMETLER -->
+  <section id="services" class="section-frame">
+    <div class="container">
+      <h2 style="text-align:center;font-size:clamp(24px,3vw,36px);margin-bottom:32px;" data-i18n="services_title">Hizmetlerimiz</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3 data-i18n="s1_t">Gayrimenkul</h3>
+          <p data-i18n="s1_d">
+            Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetiyle hayalinizdeki mülke kavuşun.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="s2_t">Yapı &amp; Tadilat</h3>
+          <p data-i18n="s2_d">
+            Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="s3_t">Reklam &amp; Baskı</h3>
+          <p data-i18n="s3_d">
+            Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="s4_t">Turizm &amp; Araç Kiralama</h3>
+          <p data-i18n="s4_d">
+            Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Şimdilik yer tutucu iletişim bölümü (sonraki adımlarda dolduracağız) -->
+  <section id="contact" class="container" style="padding:40px 0">
+    <p style="color:var(--muted)" data-i18n="contact_placeholder">
+      İletişim formu ve harita bir sonraki adımda eklenecek.
+    </p>
+  </section>
 
   <script>
-    // Basit i18n sözlüğü (yalnızca hero + menü)
+    /* ====== METİNLERİ BURADAN DEĞİŞTİR (TR/EN/AR) ======
+       - Hero, Menü ve Hizmetler metinleri
+       - Sadece aşağıdaki sözlükleri düzenlemeniz yeterli
+    */
     const i18n = {
       tr: {
         nav_services:"Hizmetlerimiz", nav_contact:"İletişim",
         hero_title:"Gayrimenkul · Yapı · Reklam · Turizm",
         hero_sub:"Sapanca'da güvenin ve kalitenin modern adresi",
-        cta:"Hizmetlerimizi Keşfedin"
+        cta:"Hizmetlerimizi Keşfedin",
+        services_title:"Hizmetlerimiz",
+        s1_t:"Gayrimenkul",
+        s1_d:"Arsa, konut ve villa satışında şeffaf ve profesyonel danışmanlık hizmetiyle hayalinizdeki mülke kavuşun.",
+        s2_t:"Yapı & Tadilat",
+        s2_d:"Modern mimari anlayışıyla inşaat, tadilat, dış cephe ve iç dekorasyon çözümleri sunuyoruz.",
+        s3_t:"Reklam & Baskı",
+        s3_d:"Markanızı öne çıkaracak UV baskı, tabela, kurumsal kimlik, promosyon ürünleri ve dijital reklam çözümleri.",
+        s4_t:"Turizm & Araç Kiralama",
+        s4_d:"Sapanca’yı ve çevresini konforlu araçlarımızla özgürce keşfedin. Havalimanı transferleri ve özel turlar bizden.",
+        contact_placeholder:"İletişim formu ve harita bir sonraki adımda eklenecek."
       },
       en: {
         nav_services:"Services", nav_contact:"Contact",
         hero_title:"Real Estate · Construction · Advertising · Tourism",
         hero_sub:"The modern address of trust and quality in Sapanca",
-        cta:"Explore Our Services"
+        cta:"Explore Our Services",
+        services_title:"Our Services",
+        s1_t:"Real Estate",
+        s1_d:"Transparent, professional consulting for land, apartments and villas to reach your dream property.",
+        s2_t:"Construction & Renovation",
+        s2_d:"Modern architecture, renovation, exterior and interior solutions.",
+        s3_t:"Advertising & Printing",
+        s3_d:"UV printing, signage, corporate identity, promotional items and digital advertising solutions.",
+        s4_t:"Tourism & Car Rental",
+        s4_d:"Discover Sapanca with comfortable cars. Airport transfers and private tours.",
+        contact_placeholder:"Contact form and map will be added in the next step."
       },
       ar: {
         nav_services:"خدماتنا", nav_contact:"تواصل",
         hero_title:"العقارات · الإنشاء · الإعلان · السياحة",
         hero_sub:"العنوان الحديث للثقة والجودة في صابانجا",
-        cta:"استكشف خدماتنا"
+        cta:"استكشف خدماتنا",
+        services_title:"خدماتنا",
+        s1_t:"العقارات",
+        s1_d:"استشارات شفافة ومهنية لشراء الأراضي والمنازل والفلل للوصول إلى العقار الذي تحلم به.",
+        s2_t:"الإنشاء والتجديد",
+        s2_d:"عمارة حديثة وأعمال تجديد وحلول للتشطيبات الداخلية والخارجية.",
+        s3_t:"الإعلان والطباعة",
+        s3_d:"طباعة UV ولوحات وهوية بصرية ومنتجات ترويجية وحلول إعلان رقمية.",
+        s4_t:"السياحة وتأجير السيارات",
+        s4_d:"اكتشف صابانجا بسيارات مريحة. تحويلات المطار والجولات الخاصة.",
+        contact_placeholder:"سيُضاف نموذج التواصل والخريطة في الخطوة التالية."
       }
     };
 
