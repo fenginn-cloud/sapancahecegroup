@@ -3,140 +3,190 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sapanca Satılık Arsa & Villa | Güvenilir Danışmanlık – Sapanca Hece Group</title>
-  <meta name="description" content="Sapanca satılık arsa ve satılık villa ilanları. İmar durumu uygun parseller, manzaralı arsalar, yatırım fırsatları. Uzman ekiple yerinde keşif ve şeffaf süreç.">
+  <title data-i18n="title">Sapanca Satılık Arsa & Villa | Sapanca Hece Group</title>
+  <meta name="description" data-i18n="meta_desc" content="Sapanca'da satılık arsa ve villa fırsatları. İmarı uygun, manzaralı parseller ve modern villalar. Uzman gayrimenkul danışmanlığı.">
   <link rel="canonical" href="https://sapancahecegroup.com/satilik-arsa-villa.html" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
   <style>
     :root{--ink:#0f172a;--muted:#475569;--ring:#e2e8f0;--brand:#1e40af;--accent:#f59e0b;--bg:#f8fafc}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    .container{max-width:1100px;margin:auto;padding:0 16px}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
     header{position:sticky;top:0;background:#ffffffcc;backdrop-filter:blur(8px);border-bottom:1px solid var(--ring);z-index:10}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
-    a{color:#0f172a;text-decoration:none;font-weight:600} a:hover{color:#1e40af;text-decoration:underline}
-    .hero{padding:56px 0;background:#1e293b url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop') center/cover; color:#fff}
-    .hero h1{margin:0 0 8px;font-size:clamp(26px,4.8vw,44px)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
+    a{color:var(--ink);text-decoration:none;font-weight:600}
+    a:hover{color:var(--brand)}
+    .lang{display:flex;gap:8px}
+    .tag{border:1px solid var(--ring);padding:6px 10px;border-radius:999px;cursor:pointer;background:#fff}
+    .tag.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+    .hero{padding:60px 16px;background:#1e293b url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop') center/cover; color:#fff;text-align:center}
+    .hero h1{margin:0 0 8px;font-size:clamp(26px,5vw,46px)}
     .lead{opacity:.95}
-    .grid{display:grid;gap:20px;grid-template-columns:1fr 1fr} @media(max-width:900px){.grid{grid-template-columns:1fr}}
-    section{background:#fff;border-top:1px solid var(--ring);border-bottom:1px solid var(--ring);padding:32px 0}
-    h2{margin:0 0 8px;font-size:clamp(20px,3.2vw,28px)}
+    section{background:#fff;border-top:1px solid var(--ring);border-bottom:1px solid var(--ring);padding:40px 0}
+    .container{max-width:1100px;margin:auto;padding:0 16px}
+    .grid{display:grid;gap:24px;grid-template-columns:1fr 1fr}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
     .card{border:1px solid var(--ring);border-radius:14px;padding:16px;background:#fff}
-    .btn{display:inline-block;background:var(--accent);color:#111;padding:10px 16px;border-radius:12px;font-weight:700}
-    .list{padding-left:18px} .list li{margin:.25rem 0}
+    h2{font-size:clamp(20px,3.2vw,28px);margin:0 0 12px}
+    .list{padding-left:18px}
+    .list li{margin:.25rem 0}
+    .btn{display:inline-block;background:var(--accent);color:#111;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none}
     .note{font-size:14px;color:var(--muted)}
+    .rtl{direction:rtl;text-align:right}
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <nav>
-        <a href="/">← Ana sayfa</a>
-        <a href="#iletisim" class="btn">Hemen İletişim</a>
-      </nav>
-    </div>
+    <nav>
+      <a href="/">← <span data-i18n="back_home">Ana Sayfa</span></a>
+      <div class="lang">
+        <button class="tag active" data-lang="tr">TR</button>
+        <button class="tag" data-lang="en">EN</button>
+        <button class="tag" data-lang="ar">AR</button>
+      </div>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container">
-        <h1>Sapanca <strong>Satılık Arsa</strong> & <strong>Satılık Villa</strong> İlanları</h1>
-        <p class="lead">İmarı net parseller, göl ve doğa manzaralı arsalar, anahtar teslim villa fırsatları. Şeffaf fiyatlama, yerinde keşif ve uçtan uca danışmanlık.</p>
-      </div>
+      <h1 data-i18n="hero_title">Sapanca Satılık Arsa & Villa</h1>
+      <p class="lead" data-i18n="hero_sub">Sapanca’da imarlı arsalar, manzaralı villalar ve güvenilir yatırım fırsatları</p>
     </section>
 
     <section>
       <div class="container grid">
         <div>
-          <h2>Sapanca’da Doğru Yatırım Nasıl Seçilir?</h2>
-          <p>Her parsel için <strong>imar durumu</strong>, <strong>kadastro sınırları</strong>, <strong>eğim/zemin</strong> ve <strong>altyapı</strong> uygunluğunu kontrol ediyoruz. Yasal riskleri en başta eleyip, bütçe–getiri dengesini netleştiriyoruz.</p>
+          <h2 data-i18n="choose_title">Sapanca’da Doğru Yatırım Nasıl Seçilir?</h2>
+          <p data-i18n="choose_text">
+            Her parsel için imar durumu, kadastro sınırları, eğim/zemin ve altyapı uygunluğunu kontrol ediyoruz.
+            Yasal riskleri en başta eleyip, bütçe–getiri dengesini netleştiriyoruz.
+          </p>
           <ul class="list">
-            <li>Merkez, Mahmudiye, Kurtköy, Kırkpınar, Yanık bölgeleri odaklı analiz</li>
-            <li>Manzaralı – müstakil – mücavir alan alternatifleri</li>
-            <li>Yatırım & oturum senaryoları (m2/emsal/TAKS-KAKS)</li>
+            <li data-i18n="choose_li1">Sapanca, Mahmudiye, Kurtköy, Kırkpınar, Yanık bölgeleri odaklı analiz</li>
+            <li data-i18n="choose_li2">Manzaralı – müstakil – mücavir alan alternatifleri</li>
+            <li data-i18n="choose_li3">Yatırım & oturum senaryoları (m2/emsal/TAKS-KAKS)</li>
           </ul>
         </div>
         <div class="card">
-          <h2>Güncel Seçenekler (örnek)</h2>
+          <h2 data-i18n="list_title">Güncel Seçenekler (örnek)</h2>
           <ul class="list">
-            <li>Mahmudiye – 500 m², yol-su-elektrik hazır, villa imarlı</li>
-            <li>Kurtköy – 750 m², eğimsiz, müstakil parsel, yerinde keşfe uygun</li>
-            <li>Kırkpınar – 4+1 modern villa, müstakil bahçe, oturuma hazır</li>
+            <li data-i18n="list1">Mahmudiye – 500 m², yol-su-elektrik hazır, villa imarlı</li>
+            <li data-i18n="list2">Kurtköy – 750 m², eğimsiz, müstakil parsel</li>
+            <li data-i18n="list3">Kırkpınar – 4+1 modern villa, müstakil bahçe</li>
           </ul>
-          <p class="note">Detaylı liste ve fiyatlar için formu gönderin; size güncel portföyü iletelim.</p>
-          <p><a class="btn" href="#iletisim">Portföy İsteyin</a></p>
+          <p class="note" data-i18n="list_note">Detaylı liste ve fiyatlar için formu gönderin; size güncel portföyü iletelim.</p>
+          <p><a class="btn" href="#contact" data-i18n="cta">Portföy İsteyin</a></p>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container grid">
-        <div>
-          <h2>Sık Sorulan Sorular</h2>
-          <details><summary>İmar durumu ve emsal nedir?</summary><p>İmar planında parselin kullanım ve inşaat hakkını belirleyen kurallardır. E=emsal, TAKS/KAKS sınırlarıyla birlikte toplam inşaat alanı hesaplanır.</p></details>
-          <details><summary>Yabancıya satış mümkün mü?</summary><p>Uygun bölgelerde ve yasal kriterler sağlandığında mümkündür. Güncel mevzuatı sizin adınıza kontrol ediyoruz.</p></details>
-          <details><summary>Tapu ve ekspertiz süreçlerini kim yönetiyor?</summary><p>Tapu randevusu, rayiç değer, belediye yazışmaları ve ekspertiz koordinasyonunu uçtan uca biz yönetiyoruz.</p></details>
-        </div>
-        <div class="card">
-          <h2>Artılarımız</h2>
-          <ul class="list">
-            <li>Yerinde keşif & şeffaf raporlama</li>
-            <li>Mimari & tadilat için teknik ekip</li>
-            <li>Transfer ve konaklama desteği</li>
-            <li>Satış sonrası süreç yönetimi</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="iletisim">
+    <section id="contact">
       <div class="container grid">
         <div class="card">
-          <h2>Danışmanlık Talep Formu</h2>
-          <form id="lead" class="form">
+          <h2 data-i18n="contact_title">Danışmanlık Talep Formu</h2>
+          <form id="form">
             <input name="name" placeholder="Ad Soyad" required />
             <input type="tel" name="phone" placeholder="Telefon" />
             <input type="email" name="email" placeholder="E-posta" required />
             <textarea name="message" rows="4" placeholder="İlginizi çeken bölge/bütçe"></textarea>
-            <button class="btn" type="submit">Gönder</button>
+            <button class="btn" type="submit" data-i18n="send">Gönder</button>
             <div id="msg" class="note"></div>
           </form>
-          <p class="note">Telefon: <a href="tel:+905536860704">+90 553 686 07 04</a> · E-posta: <a href="mailto:info@hecegroup.com.tr">info@hecegroup.com.tr</a></p>
+          <p class="note">
+            <span data-i18n="contact_note">Telefon:</span> <a href="tel:+905536860704">+90 553 686 07 04</a> · 
+            E-posta: <a href="mailto:info@hecegroup.com.tr">info@hecegroup.com.tr</a>
+          </p>
         </div>
         <div class="card">
-          <h2>Konum</h2>
-          <iframe title="Sapanca Hece Real Estate" width="100%" height="300" frameborder="0" style="border:0"
-                  src="https://www.google.com/maps?q=Sapanca%20Hece%20Real%20Estate&z=15&output=embed" loading="lazy"></iframe>
-          <p><a class="btn" href="https://maps.app.goo.gl/qobTDmVPjX2s8gYSA" target="_blank" rel="noopener">Haritada Aç</a></p>
+          <h2 data-i18n="map_title">Konum</h2>
+          <iframe width="100%" height="300" frameborder="0" style="border:0"
+            src="https://www.google.com/maps?q=Sapanca%20Hece%20Real%20Estate&z=15&output=embed" loading="lazy"></iframe>
+          <p><a class="btn" href="https://maps.app.goo.gl/qobTDmVPjX2s8gYSA" target="_blank" rel="noopener" data-i18n="map_open">Haritada Aç</a></p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"İmar durumu ve emsal nedir?","acceptedAnswer":{"@type":"Answer","text":"İmar planında parselin kullanım ve inşaat hakkını belirleyen kurallardır. E=emsal, TAKS/KAKS sınırlarıyla birlikte toplam inşaat alanı hesaplanır."}},
-    {"@type":"Question","name":"Yabancıya satış mümkün mü?","acceptedAnswer":{"@type":"Answer","text":"Uygun bölgelerde ve yasal kriterler sağlandığında mümkündür. Güncel mevzuatı sizin adınıza kontrol ediyoruz."}},
-    {"@type":"Question","name":"Tapu ve ekspertiz süreçlerini kim yönetiyor?","acceptedAnswer":{"@type":"Answer","text":"Tüm resmi süreçleri uçtan uca koordine ediyoruz: randevu, rayiç değer, yazışmalar ve ekspertiz."}}
-  ]}
-  </script>
-
-  <!-- Basit Formspree -->
   <script>
-    const FORM_ENDPOINT="https://formspree.io/f/mnngygyy";
-    document.getElementById('lead').addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const data=Object.fromEntries(new FormData(e.target).entries());
-      const msg=document.getElementById('msg');
-      try{
-        const res=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
-        if(res.ok){ msg.textContent="Teşekkürler! Talebiniz alındı."; e.target.reset(); }
-        else{ throw new Error(); }
-      }catch{ msg.textContent="Üzgünüz, bir hata oluştu. Telefon/WhatsApp ile de ulaşabilirsiniz."; }
-    });
+    const dict = {
+      tr:{
+        title:"Sapanca Satılık Arsa & Villa | Sapanca Hece Group",
+        meta_desc:"Sapanca'da satılık arsa ve villa fırsatları. İmarı uygun, manzaralı parseller ve modern villalar.",
+        back_home:"Ana Sayfa",
+        hero_title:"Sapanca Satılık Arsa & Villa",
+        hero_sub:"Sapanca’da imarlı arsalar, manzaralı villalar ve güvenilir yatırım fırsatları",
+        choose_title:"Sapanca’da Doğru Yatırım Nasıl Seçilir?",
+        choose_text:"Her parsel için imar durumu, kadastro sınırları, eğim/zemin ve altyapı uygunluğunu kontrol ediyoruz.",
+        choose_li1:"Sapanca, Mahmudiye, Kurtköy, Kırkpınar, Yanık bölgeleri odaklı analiz",
+        choose_li2:"Manzaralı – müstakil – mücavir alan alternatifleri",
+        choose_li3:"Yatırım & oturum senaryoları (m2/emsal/TAKS-KAKS)",
+        list_title:"Güncel Seçenekler (örnek)",
+        list1:"Mahmudiye – 500 m², yol-su-elektrik hazır, villa imarlı",
+        list2:"Kurtköy – 750 m², eğimsiz, müstakil parsel",
+        list3:"Kırkpınar – 4+1 modern villa, müstakil bahçe",
+        list_note:"Detaylı liste ve fiyatlar için formu gönderin; size güncel portföyü iletelim.",
+        cta:"Portföy İsteyin", contact_title:"Danışmanlık Talep Formu",
+        contact_note:"Telefon:", send:"Gönder",
+        map_title:"Konum", map_open:"Haritada Aç"
+      },
+      en:{
+        title:"Sapanca Land & Villas for Sale | Sapanca Hece Group",
+        meta_desc:"Land and villa investment opportunities in Sapanca. Legal parcels, scenic villas, trusted advisors.",
+        back_home:"Home", hero_title:"Sapanca Land & Villas for Sale",
+        hero_sub:"Build your dream home or invest in scenic Sapanca properties.",
+        choose_title:"How to Choose the Right Investment in Sapanca?",
+        choose_text:"We verify zoning, boundaries, slope, and infrastructure before you invest.",
+        choose_li1:"Focus areas: Sapanca, Mahmudiye, Kurtköy, Kırkpınar, Yanık",
+        choose_li2:"Scenic – detached – urban area options",
+        choose_li3:"Investment vs. residential analysis (m2/FAR)",
+        list_title:"Current Options (sample)",
+        list1:"Mahmudiye – 500 m², utilities ready, villa zoning",
+        list2:"Kurtköy – 750 m², flat terrain, detached parcel",
+        list3:"Kırkpınar – 4+1 villa with private garden",
+        list_note:"Request the form to receive the latest portfolio.",
+        cta:"Request Portfolio", contact_title:"Consultation Request Form",
+        contact_note:"Phone:", send:"Send",
+        map_title:"Location", map_open:"Open in Maps"
+      },
+      ar:{
+        title:"أراضٍ وفلل للبيع في صابانجا | مجموعة هجه",
+        meta_desc:"فرص استثمار في صابانجا، أراضٍ قانونية وفلل بإطلالة طبيعية، استشارات موثوقة.",
+        back_home:"الصفحة الرئيسية",
+        hero_title:"أراضٍ وفلل للبيع في صابانجا",
+        hero_sub:"أراضٍ مهيأة للبناء وفلل بإطلالة خلابة في صابانجا.",
+        choose_title:"كيف تختار الاستثمار المناسب في صابانجا؟",
+        choose_text:"نقوم بالتحقق من وضع التخطيط والحدود والطبوغرافيا والبنية التحتية قبل الشراء.",
+        choose_li1:"التركيز على مناطق صابانجا، محمودية، كورتكوي، كركبنار، يانيك",
+        choose_li2:"خيارات بإطلالة – مستقلة – مناطق حضرية",
+        choose_li3:"سيناريوهات الاستثمار والسكن",
+        list_title:"الخيارات الحالية (نموذج)",
+        list1:"محمودية – 500 م²، خدمات متوفرة، ترخيص فيلا",
+        list2:"كورتكوي – 750 م²، أرض مستوية، قطعة مستقلة",
+        list3:"كركبنار – فيلا 4+1 مع حديقة خاصة",
+        list_note:"أرسل النموذج لتصلك قائمة العقارات المحدثة.",
+        cta:"اطلب القائمة", contact_title:"نموذج طلب استشارة",
+        contact_note:"هاتف:", send:"إرسال",
+        map_title:"الموقع", map_open:"افتح في الخرائط"
+      }
+    };
+
+    const langBtns=document.querySelectorAll(".tag[data-lang]");
+    function setLang(l){
+      const d=dict[l]||dict.tr;
+      document.documentElement.lang=l;
+      document.body.classList.toggle("rtl",l==="ar");
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key=el.dataset.i18n; if(d[key]) el.textContent=d[key];
+      });
+      document.title=d.title;
+      document.querySelector('meta[name="description"]').setAttribute("content",d.meta_desc);
+      langBtns.forEach(b=>b.classList.toggle("active",b.dataset.lang===l));
+    }
+    langBtns.forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+    setLang("tr");
   </script>
 </body>
 </html>
