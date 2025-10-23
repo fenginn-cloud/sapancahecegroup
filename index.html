@@ -54,26 +54,34 @@
          font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     .container{max-width:1100px;margin:auto;padding:0 16px}
 
+    /* Linklerin kurumsal renk ve underline davranışı */
+    a{color:#0f172a;text-decoration:none;font-weight:600}
+    a:hover{color:#1e40af;text-decoration:underline}
+
     header{position:sticky;top:0;background:#ffffffcc;backdrop-filter:blur(8px);
            border-bottom:1px solid var(--ring);z-index:20}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px}
     .logo{width:28px;height:28px;border-radius:8px;background:var(--brand)}
-    .links a{margin:0 10px;color:var(--ink);text-decoration:none;font-weight:600}
+    .links a{margin:0 10px}
     .lang{display:flex;gap:8px}
     .tag{border:1px solid var(--ring);padding:6px 10px;border-radius:999px;cursor:pointer;background:#fff}
     .tag.active{background:var(--brand);color:#fff;border-color:var(--brand)}
     @media (max-width:640px){ .links{display:none} }
 
-    .hero{position:relative;color:#fff}
+    .hero{position:relative;color:#fff;background-color:#1e293b}
     .hero::before{content:"";position:absolute;inset:0;
       background:url('https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;z-index:-2}
     .hero::after{content:"";position:absolute;inset:0;background:rgba(2,6,23,.6);z-index:-1}
     .hero .inner{padding:72px 0;text-align:center}
     h1{font-size:clamp(28px,5vw,48px);margin:0 0 8px}
     p.lead{opacity:.95;margin:0}
-    .btn{display:inline-block;background:var(--accent);color:#111;padding:10px 16px;
-         border-radius:12px;font-weight:600;margin-top:16px;text-decoration:none}
+    .btn{
+      display:inline-block;background:var(--accent);color:#111;padding:12px 20px;
+      border:none;border-radius:14px;font-weight:700;font-size:16px;
+      box-shadow:0 4px 6px rgba(0,0,0,.1);transition:all .2s ease-in-out;text-decoration:none
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 10px rgba(0,0,0,.15)}
 
     section{scroll-margin-top:72px}
     .section-frame{background:#fff;padding:56px 0;border-top:1px solid var(--ring);border-bottom:1px solid var(--ring)}
@@ -234,7 +242,7 @@
             <span data-i18n="kvkk">KVKK/Aydınlatma metnini okudum, onaylıyorum.</span>
           </label>
 
-          <!-- Formspree/Netlify için gizli alanlar -->
+        <!-- Formspree/Netlify için gizli alanlar -->
           <input type="hidden" name="_subject"  value="Hece Group — Web İletişim Formu" />
           <input type="hidden" name="_language" value="tr" />
           <input type="text"   name="_gotcha"   style="display:none" tabindex="-1" autocomplete="off" />
@@ -242,9 +250,6 @@
           <button class="btn" type="submit" data-i18n="send">Gönder</button>
           <div id="formMsg" class="note" style="margin-top:8px"></div>
         </form>
-        <p class="note" style="margin-top:10px" data-i18n="form_note">
-          Not: Form gerçek gönderim için bir servisle (Formspree/Netlify) bağlanacaktır.
-        </p>
       </div>
 
       <div class="contact-card" style="padding:0;overflow:hidden">
@@ -265,7 +270,7 @@
   <a id="waFab" class="fab" href="https://wa.me/905536860704" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
 
   <script>
-    /* Dil sözlüğü (TR/EN/AR) — değişmedi */
+    /* Dil sözlüğü (TR/EN/AR) */
     const i18n = {
       tr: { nav_services:"Hizmetlerimiz", nav_gallery:"Galeri", nav_contact:"İletişim",
         hero_title:"Gayrimenkul · Yapı · Reklam · Turizm", hero_sub:"Sapanca'da güvenin ve kalitenin modern adresi",
@@ -277,7 +282,7 @@
         gallery_title:"Galeri", gallery_sub:"Seçili proje ve iş örneklerimizden kesitler.",
         contact_title:"İletişim", contact_sub:"Formu gönderin; size kısa sürede dönüş yapalım.",
         kvkk:"KVKK/Aydınlatma metnini okudum, onaylıyorum.",
-        send:"Gönder", form_note:"Not: Form gerçek gönderim için bir servisle (Formspree/Netlify) bağlanacaktır.",
+        send:"Gönder",
         addr:"Kurtköy, Sapanca / Sakarya", open_map:"Haritada Aç"
       },
       en: { nav_services:"Services", nav_gallery:"Gallery", nav_contact:"Contact",
@@ -290,7 +295,7 @@
         gallery_title:"Gallery", gallery_sub:"Selected highlights from our projects.",
         contact_title:"Contact", contact_sub:"Send the form and we'll get back to you shortly.",
         kvkk:"I have read and accept the privacy notice.",
-        send:"Send", form_note:"Note: The form will be wired to a service (Formspree/Netlify) for real submission.",
+        send:"Send",
         addr:"Kurtköy, Sapanca / Sakarya", open_map:"Open in Maps"
       },
       ar: { nav_services:"خدماتنا", nav_gallery:"المعرض", nav_contact:"تواصل",
@@ -303,12 +308,12 @@
         gallery_title:"المعرض", gallery_sub:"لمحات مختارة من مشاريعنا.",
         contact_title:"تواصل", contact_sub:"أرسل النموذج وسنعاود الاتصال بك قريبًا.",
         kvkk:"لقد قرأت إشعار الخصوصية وأوافق عليه.",
-        send:"إرسال", form_note:"ملاحظة: سيتم ربط النموذج بخدمة (Formspree/Netlify) للإرسال الفعلي.",
+        send:"إرسال",
         addr:"كورتكوي، صابانجا / ساكاريا", open_map:"افتح في الخرائط"
       }
     };
 
-    // Dil + URL param (hreflang için basit yaklaşım)
+    // Dil + URL param
     const langBtns=document.querySelectorAll('.tag[data-lang]');
     function setLang(l, push=false){
       const dict=i18n[l]||i18n.tr;
@@ -328,7 +333,7 @@
     }
     langBtns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang, true)));
 
-    // Galeri içeriği
+    // Galeri
     const slides = [
       { src:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
         t:{tr:["Modern Villa Projeleri","Doğayla iç içe, lüks ve konforlu yaşam alanları."],
