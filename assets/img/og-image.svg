@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f5f0"/>
+      <stop offset="1" stop-color="#e7eee9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- scenery -->
+  <circle cx="980" cy="150" r="70" fill="#f0e3bf"/>
+  <path d="M0 380 L210 200 L400 330 L620 175 L820 315 L1020 200 L1200 330 L1200 630 L0 630Z" fill="#bdd6c8"/>
+  <path d="M0 440 L250 300 L490 420 L730 290 L980 410 L1200 300 L1200 630 L0 630Z" fill="#9cc0ad"/>
+  <rect y="470" width="1200" height="160" fill="#9ec8d8"/>
+  <g>
+    <rect x="500" y="330" width="200" height="140" fill="#f7f5f0"/>
+    <path d="M480 330 L600 250 L720 330 Z" fill="#2c5239"/>
+    <rect x="540" y="368" width="40" height="40" fill="#9ec8d8"/>
+    <rect x="620" y="368" width="40" height="40" fill="#9ec8d8"/>
+    <rect x="582" y="380" width="36" height="90" fill="#c8a24a"/>
+  </g>
+  <!-- logo mark -->
+  <g transform="translate(90,70)">
+    <rect width="84" height="84" rx="20" fill="#1189c8"/>
+    <path d="M24 58V30l18-11 18 11v28" fill="none" stroke="#c8a24a" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M35 58V44h14v14" fill="none" stroke="#f7f5f0" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <!-- text -->
+  <text x="195" y="110" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#0a4a6b">Hece Gayrimenkul</text>
+  <text x="196" y="150" font-family="Arial, sans-serif" font-size="24" letter-spacing="6" fill="#5b6660">SAPANCA · REAL ESTATE</text>
+  <text x="90" y="250" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#0a4a6b">Sapanca'da Satılık Villa, Arsa &amp; Kiralık</text>
+  <text x="90" y="300" font-family="Arial, sans-serif" font-size="24" fill="#5b6660">Sapanca · Maşukiye · Kırkpınar — Güvenilir gayrimenkul danışmanlığı</text>
+</svg>

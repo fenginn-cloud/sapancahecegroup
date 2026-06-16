@@ -1,0 +1,13 @@
+{
+  "name": "Hece Gayrimenkul Sapanca",
+  "short_name": "Hece Gayrimenkul",
+  "description": "Sapanca'da satılık villa, arsa ve kiralık konut - güvenilir gayrimenkul danışmanlığı.",
+  "lang": "tr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5f0",
+  "theme_color": "#1189c8",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
